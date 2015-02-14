@@ -3,7 +3,7 @@ create table login(
 	id_login			int			primary key auto_increment,
 	login				varchar(40)		not null,
 	perfil				enum('C','A')	not null,
-	token				varchar(255)	
+	ultimoAcesso		timestamp
 );
 
 -- Como um cliente poderá ser um avaliador a nivel de banco de dados
@@ -48,7 +48,8 @@ create table pergunta(
 	texto					text		not null,
 	tipo_pergunta			enum('I','T','R','C','M')	not null,
 	ordem					int			not null,
-	pontuacao				float
+	pontuacao				float,
+	imagem					varchar(255)
 );
 
 create table mensagem(
